@@ -12,32 +12,32 @@ required parameters, check thier [documentation](https://newsapi.org/docs)
 package main
 
 import (
-	"github.com/codebyomar/News-API-go"
-	"fmt"
+    "github.com/codebyomar/News-API-go"
+    "fmt"
 )
 
 type params struct {
-	country string
-	pageSize int64
+    country string
+    pageSize int64
 }
 
 func main() {
-	c := newsapi.NewClient("YOUR_API_KEY_HERE")
+    c := newsapi.NewClient("YOUR_API_KEY_HERE")
 
-  p := params {
-  	country: "ng",
-  	pageSize: 40,
-	}
+    p := params {
+      country: "ng",
+      pageSize: 40,
+    }
 
-  c.TopHeadlines(p, func (res map[string]interface{}, err error) {
+    c.TopHeadlines(p, func (res map[string]interface{}, err error) {
 
-    fmt.Println("response",res)
-    fmt.Println("errr", err)
-	})
+      fmt.Println("response",res)
+      fmt.Println("errr", err)
+    })
 }
 ```
 
 ## TODO
-include endpoints from V1 of NewsAPI
-write Test
+1. include endpoints from V1 of NewsAPI
+2. write Test
 
